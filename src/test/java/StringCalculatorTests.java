@@ -38,7 +38,9 @@ public class StringCalculatorTests {
     @Test
     public void changeDelimiter() {
         int result = stringCalculator.Add("//;\n1;2;3");
+        int result1 = stringCalculator.Add("//;\n1,2;3"); //1,2 -> invalid intger
         Assertions.assertEquals(6, result);
+        Assertions.assertEquals(3, result1);
     }
 
 }
