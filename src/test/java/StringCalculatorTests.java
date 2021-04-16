@@ -16,4 +16,11 @@ public class StringCalculatorTests {
         int result = stringCalculator.Add("9");
         Assertions.assertEquals(9, result);
     }
+
+    @Test
+    public void testTwoNumbers() {
+        int result = stringCalculator.Add("9,7");
+        Assertions.assertEquals(16, result);
+    }
+
 }
