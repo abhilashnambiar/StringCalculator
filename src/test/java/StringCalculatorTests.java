@@ -34,4 +34,10 @@ public class StringCalculatorTests {
         int result = stringCalculator.Add("1\n2,3,4\n5");
         Assertions.assertEquals(15, result);
     }
+
+    @Test
+    public void changeDelimiter() {
+        int result = stringCalculator.Add("//;\n1;2;3");
+        Assertions.assertEquals(6, result);
+    }
 }
