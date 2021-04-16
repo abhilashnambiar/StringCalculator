@@ -57,4 +57,10 @@ public class StringCalculatorTests {
         Assertions.assertEquals(1007, result);
     }
 
+    @Test
+    public void anyLengthDelimiter() {
+        int result = stringCalculator.Add("//[***]\n1***2***3");
+        Assertions.assertEquals(6, result);
+    }
+
 }
