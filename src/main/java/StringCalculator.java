@@ -3,7 +3,7 @@ public class StringCalculator {
     public int Add(String numbers) {
         if (numbers.isEmpty()) return 0;
         int sum = 0;
-        String[] numberArray = numbers.split("[,]");
+        String[] numberArray = numbers.split("[,\n]");
         for(String i:numberArray) {
             sum += Integer.parseInt(i);
         }
