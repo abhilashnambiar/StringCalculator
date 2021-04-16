@@ -37,10 +37,18 @@ public class StringCalculatorTests {
 
     @Test
     public void changeDelimiter() {
-        int result = stringCalculator.Add("//;\n1;2;3");
-        int result1 = stringCalculator.Add("//;\n1,2;3"); //1,2 -> invalid intger
-        Assertions.assertEquals(6, result);
+        int result0 = stringCalculator.Add("//;\n1;2;3");
+        int result1 = stringCalculator.Add("//;\n1,2;3"); //[,] -> invalid delimiter, hence ignored
+        Assertions.assertEquals(6, result0);
         Assertions.assertEquals(3, result1);
+    }
+
+    @Test
+    public void noNegatives() {
+        Exception e = Assertions.assertThrows(NumberFormatException.class,
+                () -> stringCalculator.Add("-1,2,-3")
+        );
+        Assertions.assertTrue(e.getMessage().contains("negatives not allowed -> -1,-3"));
     }
 
 }
