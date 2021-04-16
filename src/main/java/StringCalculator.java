@@ -13,14 +13,14 @@ public class StringCalculator {
 
         if (numbers.charAt(0) == '/') {
 
-            delimiter = new StringBuilder("\n|");
+            delimiter = new StringBuilder("\n");
 
             if (numbers.charAt(3) == '\n')
-                delimiter.append(numbers.charAt(2));
+                delimiter.append('|' + numbers.charAt(2));
             else {
                 for (int i = 2; numbers.charAt(i) != '\n'; ++i) {
                     if (numbers.charAt(i) == '[')
-                        delimiter.append('(');
+                        delimiter.append("|(");
                     else if (numbers.charAt(i) == ']')
                         delimiter.append(')');
                     else

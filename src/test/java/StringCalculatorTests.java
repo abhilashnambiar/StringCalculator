@@ -63,4 +63,9 @@ public class StringCalculatorTests {
         Assertions.assertEquals(6, result);
     }
 
+    @Test
+    public void multipleDelimiters() {
+        int result = stringCalculator.Add("//[***][;]\n1***2***3;4");
+        Assertions.assertEquals(10, result);
+    }
 }
