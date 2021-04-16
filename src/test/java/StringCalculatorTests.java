@@ -23,4 +23,9 @@ public class StringCalculatorTests {
         Assertions.assertEquals(16, result);
     }
 
+    @Test
+    public void testNNumbers() {
+        int result = stringCalculator.Add("1,2,3,4,5,6,7,8");
+        Assertions.assertEquals(36, result);
+    }
 }
