@@ -51,4 +51,10 @@ public class StringCalculatorTests {
         Assertions.assertTrue(e.getMessage().contains("negatives not allowed -> -1,-3"));
     }
 
+    @Test
+    public void ignoreBiggerThan1K() {
+        int result = stringCalculator.Add("2000,3,4000,4,1000");
+        Assertions.assertEquals(1007, result);
+    }
+
 }
