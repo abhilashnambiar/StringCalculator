@@ -16,7 +16,7 @@ public class StringCalculator {
             delimiter = new StringBuilder("\n");
 
             if (numbers.charAt(3) == '\n')
-                delimiter.append('|').append(numbers.charAt(2));
+                delimiter.append("|\\").append(numbers.charAt(2));
             else {
                 for (int i = 2; numbers.charAt(i) != '\n'; ++i) {
                     if (numbers.charAt(i) == '[')

@@ -31,14 +31,16 @@ public class StringCalculatorTests {
 
     @Test
     public void testNewLines() {
-        int result = stringCalculator.Add("1\n2,3,4\n5");
-        Assertions.assertEquals(15, result);
+        int result0 = stringCalculator.Add("1\n2,3,4\n5");
+        int result1 = stringCalculator.Add("\n1,2\n3,4,5");
+        Assertions.assertEquals(15, result0);
+        Assertions.assertEquals(15, result1);
     }
 
     @Test
     public void changeDelimiter() {
         int result0 = stringCalculator.Add("//;\n1;2;3");
-        int result1 = stringCalculator.Add("//;\n1,2;3"); //[,] -> invalid delimiter, hence ignored
+        int result1 = stringCalculator.Add("//^\n1,2^3"); //[,] -> invalid delimiter, hence ignored
         Assertions.assertEquals(6, result0);
         Assertions.assertEquals(3, result1);
     }
