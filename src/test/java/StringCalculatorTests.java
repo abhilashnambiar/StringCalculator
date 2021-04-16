@@ -40,4 +40,5 @@ public class StringCalculatorTests {
         int result = stringCalculator.Add("//;\n1;2;3");
         Assertions.assertEquals(6, result);
     }
+
 }
