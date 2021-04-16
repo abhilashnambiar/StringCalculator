@@ -11,4 +11,9 @@ public class StringCalculatorTests {
         Assertions.assertEquals(0, result);
     }
 
+    @Test
+    public void testOneNumber() {
+        int result = stringCalculator.Add("9");
+        Assertions.assertEquals(9, result);
+    }
 }
